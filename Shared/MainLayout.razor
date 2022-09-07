@@ -1,0 +1,50 @@
+﻿@inherits LayoutComponentBase
+
+<MudThemeProvider Theme="Toplap"/>
+<MudDialogProvider/>
+<MudSnackbarProvider/>
+
+
+<MudLayout>
+    <MudDrawer @bind-Open="DrawerOpen" Elevation="1">
+        <MudDrawerHeader>
+            <MudText>Toplap Lisbon</MudText>
+        </MudDrawerHeader>
+        <NavMenu/>
+    </MudDrawer>
+    <MudMainContent>
+        <MudContainer MaxWidth="MaxWidth.ExtraExtraLarge">
+            @Body
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>
+
+@code {
+    public bool DrawerOpen = true;
+
+    public void DrawerToggle()
+    {
+        DrawerOpen = !DrawerOpen;
+    }
+
+    MudTheme Toplap = new MudTheme()
+    {
+        Palette = new Palette()
+        {
+            Background = "000f",
+            Black = "000f",
+            BackgroundGrey = "111f",
+            Surface = "111f",
+            Primary = "0f0f",
+            Secondary = "00ff",
+            TextPrimary = "ffff",
+            TextSecondary = "0f0f",
+            DrawerBackground = "111f",
+            DrawerText = "ffff"
+        },
+        LayoutProperties = new LayoutProperties()
+        {
+            AppbarHeight = "0px",
+        }
+    };
+}
