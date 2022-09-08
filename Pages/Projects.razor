@@ -1,3 +1,15 @@
 ﻿@page "/Projects"
+@inject PageData PageData
 
 <PageTitle>Toplap Lisbon</PageTitle>
+
+@code{
+    [CascadingParameter]
+    protected MainLayout Main { get; set; }
+    
+    protected override void OnInitialized()
+    {
+        PageData.WebPage = WebPage.Projects;
+        Main.Refresh();
+    }
+}

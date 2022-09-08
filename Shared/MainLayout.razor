@@ -1,4 +1,6 @@
-﻿@inherits LayoutComponentBase
+﻿@using Page = toplapLisbon.WebPage
+@inherits LayoutComponentBase
+@inject PageData PageData
 
 <MudThemeProvider Theme="Toplap"/>
 <MudDialogProvider/>
@@ -6,25 +8,35 @@
 
 
 <MudLayout>
-    <MudDrawer @bind-Open="DrawerOpen" Elevation="1">
-        <MudDrawerHeader>
-            <MudText>Toplap Lisbon</MudText>
-        </MudDrawerHeader>
-        <NavMenu/>
-    </MudDrawer>
+    <center>
+        <MudButton>
+            <MudNavLink Href="" Style="@("color: #" + (PageData.WebPage == WebPage.About ? "0f0f" : "ffff"))">About</MudNavLink>
+        </MudButton>
+        |
+        <MudButton>
+            <MudNavLink Href="/Projects" Style="@("color: #" + (PageData.WebPage == WebPage.Projects ? "0f0f" : "ffff"))">Projects</MudNavLink>
+        </MudButton>
+    </center>
     <MudMainContent>
         <MudContainer MaxWidth="MaxWidth.ExtraExtraLarge">
-            @Body
+            <CascadingValue Value="@Main">
+                @Body
+            </CascadingValue>
         </MudContainer>
     </MudMainContent>
 </MudLayout>
 
 @code {
-    public bool DrawerOpen = true;
+    public MainLayout Main { get; set; }
 
-    public void DrawerToggle()
+    protected override void OnInitialized()
     {
-        DrawerOpen = !DrawerOpen;
+        Main = this;
+    }
+
+    public void Refresh()
+    {
+        StateHasChanged();
     }
 
     MudTheme Toplap = new MudTheme()
