@@ -1,9 +1,10 @@
 @using ToplapLisbon.Pages
 @using System.Reflection.Metadata
+@using System.Globalization
 @namespace ToplapLisbon.Shared
 
 <MudButton OnClick="@(ToggleContent)">
-    <MudText>
+    <MudText Color="@(Events.OpenPage == this ? Color.Primary : DateTime.ParseExact(Date, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None) > DateTime.Now ? Color.Default : Color.Error)">
         @Date - @Name With @Performers At @Venue By @Promoter
     </MudText>
 </MudButton>
