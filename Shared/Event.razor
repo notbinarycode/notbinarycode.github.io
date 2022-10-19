@@ -1,0 +1,58 @@
+@using ToplapLisbon.Pages
+@using System.Reflection.Metadata
+@namespace ToplapLisbon.Shared
+
+<MudButton OnClick="@(ToggleContent)">
+    <MudText>
+        @Date - @Name With @Performers At @Venue By @Promoter
+    </MudText>
+</MudButton>
+
+@if (ShowContent)
+{
+    <MudContainer MaxWidth="MaxWidth.ExtraExtraLarge" Style="width: 100%; height: 70vh">
+        @ChildContent
+    </MudContainer>
+}
+
+@code {
+    [Parameter]
+    public Events? Events { get; set; }
+    [Parameter]
+    public RenderFragment? ChildContent { get; set; }
+    [Parameter]
+    public string Date { get; set; }
+    [Parameter]
+    public string Performers { get; set; }
+    [Parameter]
+    public string Name { get; set; }
+    [Parameter]
+    public string Venue { get; set; }
+    [Parameter]
+    public string Promoter { get; set; }
+    public bool ShowContent { get; set; } = false;
+
+    public void ToggleContent()
+    {
+        ShowContent = !ShowContent;
+        if (ShowContent)
+        {
+            if (Events.OpenPage != null)
+            {
+                Events.OpenPage.ShowContent = false;
+                Events.OpenPage.StateHasChanged();
+                Events.OpenPage = null;
+            }
+            Events.OpenPage = this;
+        }
+        else
+        {
+            if (Events.OpenPage == this)
+            {
+                Events.OpenPage = null;
+            }
+        }
+    }
+
+
+}

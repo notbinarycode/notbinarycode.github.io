@@ -1,4 +1,4 @@
-namespace toplapLisbon;
+namespace ToplapLisbon;
 
 public enum WebPage { About, Projects };
 

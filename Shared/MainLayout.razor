@@ -1,4 +1,4 @@
-﻿@using Page = toplapLisbon.WebPage
+﻿@using Page = ToplapLisbon.WebPage
 @inherits LayoutComponentBase
 @inject PageData PageData
 
@@ -20,7 +20,7 @@
         </MudButton>
         |
         <MudButton>
-            <MudNavLink Href="/Projects" Style="@("color: #" + (PageData.WebPage == WebPage.Projects ? "0f0f" : "ffff"))">Projects</MudNavLink>
+            <MudNavLink Href="/Events" Style="@("color: #" + (PageData.WebPage == WebPage.Projects ? "0f0f" : "ffff"))">Events</MudNavLink>
         </MudButton>
     </center>
     <MudMainContent>
