@@ -21,11 +21,11 @@ jobs:
 
     # publishes Blazor project to the release-folder
     - name: Publish .NET Core Project
-      run: dotnet publish toplapLisbon.csproj -c Release -o release --nologo
+      run: dotnet publish ToplapLisbon.csproj -c Release -o release --nologo
     
-    # changes the base-tag in index.html from '/' to 'toplapLisbon.github.io' to match GitHub Pages repository subdirectory
-    - name: Change base-tag in index.html from / to toplapLisbon.github.io
-      run: sed -i 's/<base href="\/" \/>/<base href="https:\/\/toplapLisbon.github.io\/" \/>/g' release/wwwroot/index.html
+    # changes the base-tag in index.html from '/' to 'ToplapLisbon.github.io' to match GitHub Pages repository subdirectory
+    - name: Change base-tag in index.html from / to ToplapLisbon.github.io
+      run: sed -i 's/<base href="\/" \/>/<base href="https:\/\/ToplapLisbon.github.io\/" \/>/g' release/wwwroot/index.html
     
     # copy index.html to 404.html to serve the same file when a file is not found
     - name: copy index.html to 404.html
