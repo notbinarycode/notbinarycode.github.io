@@ -1,5 +1,6 @@
 ﻿@using Page = ToplapLisbon.WebPage
 @inherits LayoutComponentBase
+@inject IJSRuntime JSRuntime
 @inject PageData PageData
 
 <MudThemeProvider Theme="Toplap"/>
@@ -8,12 +9,13 @@
 
 
 <MudLayout>
+    <MudItem Style="position:absolute; z-index:-10;" id="sketch-div"/>
     <center>
         <br/>
         <MudText Typo="Typo.h4">
-            TOPLAP 
+            TOPLAP
             <MudImage Src="images/toplapLogoWhite.png" Style="width: 50px; height: 50px;"/>
-            LISBON 
+            LISBON
         </MudText>
         <MudButton>
             <MudNavLink Href="" Style="@("color: #" + (PageData.WebPage == WebPage.About ? "0f0f" : "ffff"))">About</MudNavLink>
@@ -38,6 +40,16 @@
     protected override void OnInitialized()
     {
         Main = this;
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender) await setP5();
+    }
+
+    private async Task setP5()
+    {
+        await JSRuntime.InvokeVoidAsync("setp5");
     }
 
     public void Refresh()

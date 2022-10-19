@@ -2,24 +2,155 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <title>toplapLisbon</title>
-    <base href="/" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
-    <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
+    <base href="/"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+    <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet"/>
 </head>
 
 <body>
-    <div id="app">Loading...</div>
+<div id="app">Loading...</div>
 
-    <div id="blazor-error-ui">
-        An unhandled error has occurred.
-        <a href="" class="reload">Reload</a>
-        <a class="dismiss">🗙</a>
-    </div>
-    <script src="_framework/blazor.webassembly.js"></script>
-    <script src="_content/MudBlazor/MudBlazor.min.js"></script>
+<div id="blazor-error-ui">
+    An unhandled error has occurred.
+    <a href="" class="reload">Reload</a>
+    <a class="dismiss">🗙</a>
+</div>
+<script src="scripts/p5.js"></script>
+<script src="_framework/blazor.webassembly.js"></script>
+<script src="_content/MudBlazor/MudBlazor.min.js"></script>
+
+<script>
+    let P5;
+    let DotNet = null;
+
+    SetDotnetReference = function (pDotNetReference) {
+        DotNet = pDotNetReference;
+    };
+
+    DisposeJs = function () {
+        if (P5 != null) P5.remove();
+    }
+
+    window.setp5 = () => {
+        P5 = new p5(sketch, window.document.getElementById('sketch-div'));
+    };
+
+    let sketch = function (p) {
+
+        let bytes = [];
+
+        p.setup = function () {
+            p.createCanvas(p.windowWidth * 0.99, p.windowHeight * 0.99);
+            p.frameRate(60);
+            p.background(0);
+            for (let x = 0; x < p.width / 15; x++) {
+                bytes[x] = [];
+                for (y = 0; y < p.height / 10; y++) {
+                    bytes[x][y] = new Byte();
+                    bytes[x][y].b0 = String(0);
+                    bytes[x][y].b1 = String(0);
+                    bytes[x][y].display = bytes[x][y].b0 + bytes[x][y].b1;
+                    // bytes[x][y].draw(bytes[x][y].display,x*15,10+(y*10));
+                }
+            }
+        }
+
+        p.windowResized = function () {
+            p.resizeCanvas(p.windowWidth * 0.99, p.windowHeight * 0.99);
+        }
+
+        p.draw = function () {
+            p.background(0);
+            let x = p.floor(p.random(bytes.length));
+            let y = p.floor(p.random(bytes[0].length));
+            bytes[x][y].generate();
+            x = p.floor(p.random(bytes.length));
+            y = p.floor(p.random(bytes[0].length));
+            bytes[x][y].reset();
+            for (x = 0; x < bytes.length; x++) {
+                for (y = 0; y < bytes[x].length; y++) {
+                    bytes[x][y].draw(bytes[x][y].display, x * 15, 10 + (y * 10));
+                }
+            }
+        }
+
+        class Byte {
+            constructor() {
+                this.assigned = false;
+                this.b0 = String(0);
+                this.b1 = String(0);
+                this.display = this.b0 + this.b1;
+            }
+
+            draw(byte, x, y) {
+                p.fill(50);
+                p.strokeWeight(0);
+                if (byte != "00") {
+                    p.fill(0, 100, 0);
+                }
+                p.text(byte, x, y);
+            }
+
+            reset() {
+                this.b0 = "0";
+                this.b1 = "0";
+                this.display = "00"
+            }
+
+            generate() {
+                this.b0 = p.round(p.random(0, 15));
+                if (this.b0 < 10) {
+                    this.b0 = String(this.b0);
+                }
+                if (this.b0 == 10) {
+                    this.b0 = 'A';
+                }
+                if (this.b0 == 11) {
+                    this.b0 = 'B';
+                }
+                if (this.b0 == 12) {
+                    this.b0 = 'C';
+                }
+                if (this.b0 == 13) {
+                    this.b0 = 'D';
+                }
+                if (this.b0 == 14) {
+                    this.b0 = 'E';
+                }
+                if (this.b0 == 15) {
+                    this.b0 = 'F';
+                }
+                this.b1 = p.round(p.random(0, 15));
+                if (this.b1 < 10) {
+                    this.b1 = String(this.b1);
+                }
+                if (this.b1 == 10) {
+                    this.b1 = 'A';
+                }
+                if (this.b1 == 11) {
+                    this.b1 = 'B';
+                }
+                if (this.b1 == 12) {
+                    this.b1 = 'C';
+                }
+                if (this.b1 == 13) {
+                    this.b1 = 'D';
+                }
+                if (this.b1 == 14) {
+                    this.b1 = 'E';
+                }
+                if (this.b1 == 15) {
+                    this.b1 = 'F';
+                }
+                this.display = this.b0 + this.b1;
+            }
+        }
+    };
+</script>
+
 </body>
 
 </html>
