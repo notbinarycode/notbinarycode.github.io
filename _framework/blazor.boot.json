@@ -21,7 +21,7 @@
       "Microsoft.Extensions.Primitives.dll": "sha256-YColTWA58whC+8aBjv1O7HgsyYrbHTba601EkNDWAlo=",
       "Microsoft.JSInterop.dll": "sha256-LEvIEkzKN5lDQWnERr0\/BOMZGuDg6\/0K6ewjH+F4GOI=",
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-DI0RkZky47FtF3\/3VasOGjpMhrR+H3kb1cv\/2kzJoBQ=",
-      "MudBlazor.dll": "sha256-2RnIfTOfaq+B0ZT0VxH79\/wZGCjxzE5+8ViB0GHltHA=",
+      "MudBlazor.dll": "sha256-4nlbXW0TSY0QuIvLelEsnpLvL3XDkQ0ehjkCWdCeeRU=",
       "System.Collections.Concurrent.dll": "sha256-UVY\/ij6intX\/l+48Yh7NcBKMld7ZvxW2q1Rhkt1QeMI=",
       "System.Collections.dll": "sha256-fYRbiRbB3bLxFUagOxpAo7I0eAYpotHTycO9sCc65qQ=",
       "System.ComponentModel.dll": "sha256-Qssp+YWlAZw03rhXDz8auxAqI87BtJ00YYYkOj9jbSw=",
@@ -36,7 +36,7 @@
       "System.Runtime.dll": "sha256-Y\/BJfdc+nuPgnXpojMdezD2D7pBxjZH7VCIOaxzPYN8=",
       "System.Text.Encodings.Web.dll": "sha256-KdQgiKE6SHw\/R5tgnFnfrR88hUEMqrpXIXcQ5R3dc7c=",
       "System.Text.Json.dll": "sha256-dB0ERKyzQCagHW+K6nstihkaIAQyPW6UQCSmtj+XnhY=",
-      "ToplapLisbon.dll": "sha256-0MCD0ittYm2hGLyN7+nfW4DHN7sNjVNO8WegApjYaD4="
+      "ToplapLisbon.dll": "sha256-ewW9csqQo3L2GSqcuqEBHQRUEofiRpUqpNbvWoSgkuw="
     },
     "extensions": null,
     "lazyAssembly": null,
