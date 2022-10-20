@@ -4,7 +4,7 @@
 @namespace ToplapLisbon.Shared
 
 <MudButton OnClick="@(ToggleContent)">
-    <MudText Color="@(Events.OpenPage == this ? Color.Primary : DateTime.ParseExact(Date, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None) > DateTime.Now ? Color.Default : Color.Error)">
+    <MudText Color="@(Events.OpenPage == this ? Color.Primary : DateTime.ParseExact(Date, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None) > DateTime.Now ? Color.Default : Color.Tertiary)">
         @Date - @Name With @Performers At @Venue By @Promoter
     </MudText>
 </MudButton>
