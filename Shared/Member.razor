@@ -3,13 +3,19 @@
 @using System.Globalization
 @namespace ToplapLisbon.Shared
 
+<center>
+    <MudLink Href="@Link">
+        <MudText>@Name</MudText>
+        <MudImage Src="@Picture" Style="width:20vw; height:40vh;"/>
+    </MudLink>
+</center>
+
+
 @code {
     [Parameter]
     public string Name { get; set; }
     [Parameter]
     public string Picture { get; set; }
-    [Parameter]
-    public string Description { get; set; }
     [Parameter]
     public string Link { get; set; }
 }
