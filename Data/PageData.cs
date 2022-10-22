@@ -1,6 +1,6 @@
 namespace ToplapLisbon;
 
-public enum WebPage { About, Projects };
+public enum WebPage { About, Events, Resources };
 
 public class PageData
 {

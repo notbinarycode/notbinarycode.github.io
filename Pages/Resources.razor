@@ -1,2 +1,41 @@
 @page "/Resources"
 @inject PageData PageData
+
+<PageTitle>Toplap Lisbon</PageTitle>
+
+<br/>
+<center>
+    <MudText Typo="Typo.h6">Friends</MudText>
+    <MudLink Href="https://toplap.org/">Toplap</MudLink>
+    <br/>
+    <MudLink Href="https://algorave.com/">Algorave</MudLink>
+    <br/>
+    <MudLink Href="https://postcarboncollective.github.io/">Postcarbon Collective</MudLink>
+    <br/>
+    <MudLink Href="https://kaptchafail.bandcamp.com/album/xenolith-v10">Kaptcha Fail</MudLink>
+
+    <br/><br/>
+
+    <MudText Typo="Typo.h6">Software</MudText>
+    <MudLink Href="https://supercollider.github.io/">SuperCollider</MudLink>
+    <br/>
+    <MudLink Href="https://tidalcycles.org/">Tidal Cycles</MudLink>
+    <br/>
+    <MudLink Href="https://github.com/Qirky/FoxDot">FoxDot</MudLink>
+    <br/>
+    <MudLink Href="https://sonic-pi.net/">Sonic Pi</MudLink>
+    <br/>
+    <MudLink Href="https://hydra.ojack.xyz/">Hydra</MudLink>
+</center>
+
+@code{
+    [CascadingParameter]
+    protected MainLayout Main { get; set; }
+
+    protected override void OnInitialized()
+    {
+        PageData.WebPage = WebPage.Resources;
+        Main.Refresh();
+    }
+
+}

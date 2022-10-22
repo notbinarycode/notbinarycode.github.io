@@ -1,7 +1,8 @@
 ﻿@page "/Events"
 @inject PageData PageData
 
-<PageTitle>ToplapLisbon Lisbon</PageTitle>
+<PageTitle>Toplap Lisbon</PageTitle>
+
 <br/>
 <center>
     <Event Events="@this"
@@ -63,7 +64,7 @@
 
     protected override void OnInitialized()
     {
-        PageData.WebPage = WebPage.Projects;
+        PageData.WebPage = WebPage.Events;
         Main.Refresh();
     }
 
