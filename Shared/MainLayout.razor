@@ -10,28 +10,30 @@
 
 <MudLayout>
     <MudItem Style="position:absolute; z-index:-10;" id="sketch-div"/>
-    <center>
-        <br/>
-        <MudText Typo="Typo.h4">
-            TOPLAP
-            <MudImage Src="images/toplapLogoWhite.png" Style="width: 50px; height: 50px;"/>
-            LISBON
-        </MudText>
-        <MudButton>
-            <MudNavLink Href="" Style="@("color: #" + (PageData.WebPage == WebPage.About ? "0f0f" : "ffff"))">About</MudNavLink>
-        </MudButton>
-        |
-        <MudButton>
-            <MudNavLink Href="/Events" Style="@("color: #" + (PageData.WebPage == WebPage.Projects ? "0f0f" : "ffff"))">Events</MudNavLink>
-        </MudButton>
-    </center>
-    <MudMainContent>
-        <MudContainer MaxWidth="MaxWidth.ExtraExtraLarge">
-            <CascadingValue Value="@Main">
-                @Body
-            </CascadingValue>
-        </MudContainer>
-    </MudMainContent>
+    <MudItem Style="background:#0000; min-height: 100vh; height: 100vh; min-width: 100vw; width: 100vw; overflow-x: hidden; overflow-y: scroll;">
+        <center>
+            <br/>
+            <MudText Typo="Typo.h4">
+                TOPLAP
+                <MudImage Src="images/toplapLogoWhite.png" Style="width: 50px; height: 50px;"/>
+                LISBON
+            </MudText>
+            <MudButton>
+                <MudNavLink Href="" Style="@("color: #" + (PageData.WebPage == WebPage.About ? "0f0f" : "ffff"))">About</MudNavLink>
+            </MudButton>
+            |
+            <MudButton>
+                <MudNavLink Href="/Events" Style="@("color: #" + (PageData.WebPage == WebPage.Projects ? "0f0f" : "ffff"))">Events</MudNavLink>
+            </MudButton>
+        </center>
+        <MudMainContent>
+            <MudContainer MaxWidth="MaxWidth.ExtraExtraLarge">
+                <CascadingValue Value="@Main">
+                    @Body
+                </CascadingValue>
+            </MudContainer>
+        </MudMainContent>
+    </MudItem>
 </MudLayout>
 
 @code {
