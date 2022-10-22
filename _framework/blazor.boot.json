@@ -33,10 +33,10 @@
       "System.Private.Runtime.InteropServices.JavaScript.dll": "sha256-dpP4120H8+4uggpkCLFNoL6RO1wcaGMQSMnM3b7g2IE=",
       "System.Private.Uri.dll": "sha256-507h4d\/6WRgRJDZZI4h9cO8CwKuqbcVWiI5bLGhHbTc=",
       "System.Runtime.CompilerServices.Unsafe.dll": "sha256-5IU6GUX8qOctLAYHuQ7clOc3ohNJ6aky7koryZ5i6W8=",
-      "System.Runtime.dll": "sha256-6EnQWd\/4ChVGeac0oIVLRdRqA54FFqfraffdvx2faC4=",
+      "System.Runtime.dll": "sha256-snfN0mEysNIZYlrxoXXoG+Hc\/cNkRnzHgHJCPCHaimw=",
       "System.Text.Encodings.Web.dll": "sha256-KdQgiKE6SHw\/R5tgnFnfrR88hUEMqrpXIXcQ5R3dc7c=",
       "System.Text.Json.dll": "sha256-dB0ERKyzQCagHW+K6nstihkaIAQyPW6UQCSmtj+XnhY=",
-      "ToplapLisbon.dll": "sha256-+GBeytdDiNOBqkqY8XTQjH7KviNTgW\/leqnXiYrQfYA="
+      "ToplapLisbon.dll": "sha256-tnKOwrD\/vdEgrZU3il8Te+d\/d0yIHX9nkp+QmkNvbXg="
     },
     "extensions": null,
     "lazyAssembly": null,
