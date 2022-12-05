@@ -1,4 +1,4 @@
-namespace ToplapLisbon;
+namespace notbinarycode;
 
 public enum WebPage { About, Events, Resources };
 

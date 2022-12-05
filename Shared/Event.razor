@@ -1,7 +1,7 @@
-@using ToplapLisbon.Pages
+@using notbinarycode.Pages
 @using System.Reflection.Metadata
 @using System.Globalization
-@namespace ToplapLisbon.Shared
+@namespace notbinarycode.Shared
 
 <MudButton OnClick="@(ToggleContent)">
     <MudText Color="@(Events.OpenPage == this ? Color.Primary : DateTime.ParseExact(Date, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None) > DateTime.Now ? Color.Default : Color.Tertiary)">
