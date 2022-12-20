@@ -5,15 +5,18 @@
 
 <MudButton OnClick="@(ToggleContent)">
     <MudText Color="@(Events.OpenPage == this ? Color.Primary : DateTime.ParseExact(Date, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None) > DateTime.Now ? Color.Default : Color.Tertiary)">
-        @Date - @Name With @Performers At @Venue By @Promoter
+        @Date - @Name with @Performers at @Venue by @Promoter
     </MudText>
 </MudButton>
 
-@if (ShowContent)
+@if (@ChildContent != null)
 {
-    <MudContainer MaxWidth="MaxWidth.ExtraExtraLarge" Style="width: 100%; height: 60vh">
-        @ChildContent
-    </MudContainer>
+    @if (ShowContent)
+    {
+        <MudContainer MaxWidth="MaxWidth.ExtraExtraLarge" Style="width: 100%; height: 60vh">
+            @ChildContent
+        </MudContainer>
+    }
 }
 
 @code {
