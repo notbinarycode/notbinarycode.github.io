@@ -1,64 +1,51 @@
 ﻿@page "/"
 @inject PageData PageData
 
-<PageTitle>Not Binary Code</PageTitle>
+<PageTitle>notbinarycode</PageTitle>
 
+<MudGrid>
+    <MudItem lg="7" xs="7"/>
+    <MudItem lg="3" xs="5">
+        <MudText Typo="Typo.h4">notbinarycode</MudText>
+    </MudItem>
+</MudGrid>
 <br/>
-<center>
-    <MudText>
-        Not Binary Code was founded in 2022 with the intention of developing and holding safe-spaces for Lisbon's Algorave, Live Coding and AudioVisual Technology communities.
-        <br/><br/>
-        Our node is a part of the greater Toplap network and adheres to the commitment towards openness and transparency while simultaneously adapting itself to the specific wants and needs of our community.
-        <br/><br/>
-        Queerness, in its most pure definition, is what we strive for - we love weird music, scrappily written code, rejected bodies and invisible identities.
-        <br/><br/>
-        Be it by creating bits or by creating memories, we, together, forge the futures that make us more connected, less carbon.
-    </MudText>
-    <br/><br/>
-    <MudText>
-        To book our members, get help producing an event, join us, send us cute robot memes or any other query, send us an email at <MudLink Href="mailto:notbinarycode@gmail.com">notbinarycode@gmail.com</MudLink>
-    </MudText>
-    <br/><br/>
-    <MudText Typo="Typo.h6">Members</MudText>
-    <br/>
-    <MudText>
-        <MudGrid>
-            <MudItem lg="3" md="6" xs="12">
-                <ImageLink Size="350"
-                           Name="Earth To Abigail"
-                           Picture="images/EarthToAbigail.jpg"
-                           Link="https://www.earthtoabigail.com/"/>
-            </MudItem>
-            <MudItem lg="3" md="6" xs="12">
-                <ImageLink Size="350"
-                           Name="quendera"
-                           Picture="images/quendera.jpg"
-                           Link="https://www.quendera.com/"/>
-            </MudItem>
-            <MudItem lg="3" md="6" xs="12">
-                <ImageLink Size="350"
-                           Name="Ndr0n"
-                           Picture="images/Ndr0n.jpg"
-                           Link="https://ndr0n.github.io/"/>
-            </MudItem>
-            <MudItem lg="3" md="6" xs="12">
-                <ImageLink Size="350"
-                           Name="violeta"
-                           Picture="images/violeta.jpg"
-                           Link="https://www.instagram.com/cristalvioletacristal/"/>
-            </MudItem>
-        </MudGrid>
-    </MudText>
-</center>
+<MudGrid>
+    <MudItem lg="2" xs="2"/>
+    <MudItem lg="3" xs="8">
+        <MudCard Class="pa-4">
+            <MudText Typo="Typo.body1">
+                notbinarycode was founded in 2022 with the intention of developing and holding safe-spaces for Lisbon's
+                algorave, live coding and audiovisual technology communities.
+                <br/>
+                our node is a part of the greater toplap network and adheres to the commitment towards openness and
+                transparency while simultaneously adapting itself to the specific wants and needs of our community.
+                <br/>
+                queerness, in its most pure definition, is what we strive for - we love weird music, scrappily written
+                code, rejected bodies and invisible identities.
+                <br/>
+                be it by creating bits or by creating memories, we, together, forge the futures that make us more
+                connected.
+            </MudText>
+        </MudCard>
+        <br/>
+        <MudCard Class="pa-4">
+            <MudText>
+                to book our members, co-produce an event, join us, send us cute robot memes, collaborate or any
+                other query, send us an email at
+                <MudLink Href="mailto:notbinarycode@gmail.com">notbinarycode@gmail.com</MudLink>
+            </MudText>
+        </MudCard>
+    </MudItem>
+</MudGrid>
 
-@code{
-    [CascadingParameter]
-    protected MainLayout Main { get; set; }
-
-    protected override void OnInitialized()
-    {
-        PageData.WebPage = WebPage.About;
-        Main.Refresh();
-    }
-
+@code
+{
+// [CascadingParameter]
+// protected MainLayout Main { get; set; }
+// protected override void OnInitialized()
+// {
+// PageData.WebPage = WebPage.About;
+// Main.Refresh();
+//}
 }
